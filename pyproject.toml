@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figment-site-check"
+version = "0.1.0"
+description = "Check a static website folder before upload."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Figment"}]
+keywords = ["static-site", "html", "hosting", "preflight"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Homepage = "https://figment.so/"
+Repository = "https://github.com/njerschow/figment-site-check"
+Issues = "https://github.com/njerschow/figment-site-check/issues"
+
+[project.scripts]
+figment-site-check = "figment_site_check.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

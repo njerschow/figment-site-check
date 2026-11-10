@@ -1,0 +1,14 @@
+[
+  {"name":"valid site", "files":[{"path":"index.html","size":50},{"path":"assets/main.css","size":100}], "codes":[], "ok":true},
+  {"name":"no entry", "files":[{"path":"site/index.html","size":10}], "codes":["missing_index"], "ok":false},
+  {"name":"private files", "files":[{"path":"index.html","size":1},{"path":".env.local","size":1},{"path":".git/config","size":1},{"path":"ssl/key.pem","size":1}], "codes":["sensitive_path","sensitive_path","sensitive_path"], "ok":false},
+  {"name":"source and backend", "files":[{"path":"index.html","size":1},{"path":"src/main.tsx","size":1},{"path":"form.php","size":1},{"path":"node_modules","size":0}], "codes":["source_file","server_file","dependencies"], "ok":true},
+  {"name":"traversal", "files":[{"path":"../index.html","size":1}], "codes":["invalid_path","missing_index"], "ok":false},
+  {"name":"windows path", "files":[{"path":"C:\\index.html","size":1}], "codes":["invalid_path","missing_index"], "ok":false},
+  {"name":"absolute path", "files":[{"path":"/index.html","size":1}], "codes":["invalid_path","missing_index"], "ok":false},
+  {"name":"case collision", "files":[{"path":"index.html","size":1},{"path":"INDEX.HTML","size":1}], "codes":["case_collision"], "ok":false},
+  {"name":"duplicate", "files":[{"path":"index.html","size":1},{"path":"index.html","size":1}], "codes":["duplicate_path"], "ok":false},
+  {"name":"symlink", "files":[{"path":"index.html","size":0,"kind":"symlink"}], "codes":["symlink","missing_index"], "ok":false},
+  {"name":"limits", "files":[{"path":"index.html","size":11}], "options":{"maxFileBytes":10,"maxTotalBytes":10}, "codes":["large_file","large_site"], "ok":false},
+  {"name":"limit equality", "files":[{"path":"index.html","size":10}], "options":{"maxFileBytes":10,"maxTotalBytes":10}, "codes":[], "ok":true}
+]
