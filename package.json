@@ -1,6 +1,6 @@
 {
   "name": "figment-site-check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check a static website folder before upload: entry page, sensitive paths, size limits, and unbuilt source files.",
   "main": "index.cjs",
   "types": "index.d.ts",

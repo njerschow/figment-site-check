@@ -6,6 +6,8 @@ Built by [Figment](https://figment.so/), a website host for sites made with Figm
 
 ## Quick start
 
+Registry publication is pending. Until npm and PyPI are live, download the package from [GitHub Releases](https://github.com/njerschow/figment-site-check/releases/latest). Install the `.tgz` with `npm install ./figment-site-check-0.1.1.tgz` or the `.whl` with `pip install ./figment_site_check-0.1.1-py3-none-any.whl`. The registry commands below apply after publication.
+
 ```sh
 npx figment-site-check ./dist
 ```

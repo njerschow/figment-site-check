@@ -44,7 +44,7 @@ def main():
         walk(root)
         limits = {}
         for key, mib in [("maxFileBytes", args.max_file_mib), ("maxTotalBytes", args.max_total_mib)]:
-            value = mib * 1048576
+            value = float(mib) * 1048576
             if not value.is_integer() or value <= 0:
                 raise ValueError(f"{key} must convert to a positive whole number of bytes.")
             limits[key] = int(value)
